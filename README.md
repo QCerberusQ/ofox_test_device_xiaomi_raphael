@@ -1,0 +1,1 @@
+# ofox_test_device_xiaomi_raphael
