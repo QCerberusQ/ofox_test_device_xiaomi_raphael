@@ -80,11 +80,6 @@ BOARD_SUPER_PARTITION_VENDOR_DEVICE_SIZE := 1610612736
 BOARD_SUPER_PARTITION_CUST_DEVICE_SIZE := 1073741824
 BOARD_QTI_DYNAMIC_PARTITIONS_SIZE := 6438256640
 
-# Workaround for error copying vendor files to recovery ramdisk
-BOARD_PARTITION_LIST := $(call to-upper, $(BOARD_QTI_DYNAMIC_PARTITIONS_PARTITION_LIST))
-$(foreach p, $(BOARD_PARTITION_LIST), $(eval BOARD_$(p)IMAGE_FILE_SYSTEM_TYPE := ext4))
-$(foreach p, $(BOARD_PARTITION_LIST), $(eval TARGET_COPY_OUT_$(p) := $(call to-lower, $(p))))
-
 # Properties
 TARGET_VENDOR_PROP += $(DEVICE_PATH)/vendor.prop
 
